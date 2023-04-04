@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react'
 function App() {
+
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+  const [sexo, setSexo] = useState('')
+
+  function handleCSadastro(){
+    alert(`Nome: ${nome} \nEmail: ${email} \nSenha: ${senha} \nSexo: ${sexo}`)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+          <h1>Cadastro de Usuário</h1>
+        <form onSubmit={handleCSadastro}>
+          <label>Nome: </label>
+          <input type="text"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}/><br />
+          <label>E-mail: </label>
+          <input type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}/><br />
+          <label>Senha: </label>
+          <input type="password"
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}/><br />
+          <select
+          value={sexo}
+          onChange={(e) => setSexo(e.target.value)}>
+            <option value=''></option>
+            <option value='femenino'>Femenino</option>
+            <option value='masculino'>Masculino</option>
+          </select><br />
+          <button type="submit">Cadastrar</button>
+        </form>
     </div>
+    
   );
+
 }
 
 export default App;
