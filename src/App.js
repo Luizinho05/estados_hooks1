@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Contador from './Contador'
+import './estilo.app.css'
+
 function App() {
 
   const [nome, setNome] = useState('')
@@ -11,34 +14,39 @@ function App() {
   }
 
   return (
-    <div>
-          <h1>Cadastro de Usuário</h1>
-        <form onSubmit={handleCSadastro}>
+    <div className='contador'>
+      <div>
+        <h1>Estados com Hooks</h1>
+        <form onSubmit={handleCadastro}>
           <label>Nome: </label>
           <input type="text"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}/><br />
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          /><br />
           <label>E-mail: </label>
           <input type="text"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}/><br />
+          onChange={(e) => setEmail(e.target.value)}
+          /><br />
           <label>Senha: </label>
           <input type="password"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}/><br />
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          /><br />
           <select
           value={sexo}
-          onChange={(e) => setSexo(e.target.value)}>
-            <option value=''></option>
-            <option value='femenino'>Femenino</option>
-            <option value='masculino'>Masculino</option>
+          onChange={(e) => setSexo( e.target.value )}>
+          <option value=''></option>
+          <option value='feminino'>Feminino</option>
+          <option value='masculino'>Masculino</option>
           </select><br />
-          <button type="submit">Cadastrar</button>
+          <button type="submit">Enviar</button>
         </form>
+      </div>
+      <div>
+        <Contador />
+      </div>
     </div>
-    
   );
-
 }
-
 export default App;
