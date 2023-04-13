@@ -2,10 +2,10 @@ import React, {  useState } from 'react'
 
 export default function Contador(){
 
-    const [ valor, setValor] = useState(10)
+    const [ valor, setValor] = useState(0)
 
     function aumentar(){
-        setValor(valor + 2)
+        setValor(valor + 1)
     }
     function diminuir(){
         if(valor === 0){

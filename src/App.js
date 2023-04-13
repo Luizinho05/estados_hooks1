@@ -17,7 +17,7 @@ function App() {
     <div className='contador'>
       <div>
         <h1>Estados com Hooks</h1>
-        <form onSubmit={handleCadastro}>
+        <form onSubmit={ handleCSadastro }>
           <label>Nome: </label>
           <input type="text"
             value={nome}
